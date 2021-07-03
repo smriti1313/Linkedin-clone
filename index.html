@@ -82,7 +82,7 @@
       }
 
       .left {
-        /* border: 1px solid black; */
+        border: 1px solid black;
         width: 225px;
         margin-top: 35px;
       }
@@ -91,10 +91,12 @@
         /* border: 1px solid black; */
         flex-grow: 1;
         margin-top: 35px;
+        margin-left: 25px;
+        margin-right: 25px;
       }
 
       .right {
-        /* border: 1px solid black; */
+        border: 1px solid black;
         width: 300px;
         margin-top: 35px;
       }
@@ -157,46 +159,99 @@
         color: #f89295;
       }
 
-      .posts-hr{
+      .posts-hr {
         border-top: 1px solid #000000aa;
-        margin-top: 25px;
-        border-color: rgb(167, 167, 167);
+        margin-top: 30px;
+        border-color: #00000033;
       }
 
-      .post{
+      .post {
         background-color: white;
         border: 1px solid #6e6e6e;
+        border-color: #6e6e6e42;
         margin-top: 15px;
-        border-radius: 5px;
+        border-radius: 10px;
         display: flex;
         flex-direction: column;
-
       }
-
-      .post-info{
+      .post-info {
         display: flex;
         align-items: center;
       }
 
-      .post-metadata{
+      .post-metadata {
         display: flex;
         flex-direction: column;
         margin-left: 10px;
+        margin-top: 7px;
         line-height: 1.3rem;
-       
       }
-
-      .post-creator{
+      .post-creator {
         font-size: 15px;
-        font-weight: 600;
+        font-weight: 500;
       }
 
-      .post-followers,.post-duration,.material-icons{
-        color: #00000099;
+      .faded-text {
         font-size: small;
+        color: #00000099;
       }
 
-     </style>
+      .post-data {
+        font-size: 15px;
+        color: rgb(48, 47, 47);
+        margin-left: 15px;
+        margin-top: 10px;
+      }
+
+      .read-more {
+        margin-left: 447px;
+        margin-top: 12px;
+        color: #00000099;
+      }
+
+      .likes {
+        font-size: small;
+        color: #0a66c2;
+        margin-left: 15px;
+      }
+
+      .center-content {
+        display: flex;
+        align-items: center;
+      }
+
+      .no-likes {
+        font-size: small;
+        margin-left: 5px;
+      }
+
+      .interaction-button {
+        background-color: transparent;
+        border: none;
+        display: flex;
+        align-items: center;
+        margin-right: 12px;
+        margin-bottom: 10px;
+        color: #00000099;
+        margin-left: 7px;
+      }
+
+      .likes-hr {
+        border-top: 1px solid #000000aa;
+        margin-top: 12px;
+        margin-bottom: 10px;
+        border-color: #00000033;
+      }
+
+      .post-interactions {
+        display: flex;
+      }
+
+      .post-content-image {
+        margin-top: 10px;
+        width: 100%;
+      }
+    </style>
   </head>
   <body>
     <header class="navbar">
@@ -274,17 +329,49 @@
 
           <div class="post">
             <div class="post-info">
-              <img class="post-image" src="user.jpeg" alt="my photo" />
+              <img class="post-image" src="user.jpeg" />
+
               <div class="post-metadata">
-                <div class="post-creator">Smriti's post</div>
-                <div class="post-followers">4,528 followers</div>
-                <div class="post-duration">
-                  1w ▪ <span class="material-icons">public</span>
+                <div class="post-creator">Smriti Singh</div>
+                <div class="faded-text">1,543 followers</div>
+                <div class="faded-text">
+                  1w • <span class="material-icons faded-text"> public </span>
                 </div>
               </div>
             </div>
-            <div class="post-data"></div>
-            <div class="post-interactions"></div>
+            <div class="post-data">
+              A key to achieving success is to assemble a solid and stable management team.Presenting you our Management Team of The Uplift Project.
+              <!-- #uplift #upliftproject #girlscript #educationfirst #100DaysOfUplift  -->
+            
+            </div>
+
+            <div class="read-more">...see more</div>
+            <div>
+              <img
+                class="post-content-image"
+                src="https://media-exp3.licdn.com/dms/image/C4D22AQFJFmCBSAKkSg/feedshare-shrink_800/0/1621953872494?e=1628121600&v=beta&t=r2q3H8HkWh-AfY-n70ST8t2pMDmywAIONiuBY4oqfpE"
+                alt=""
+              />
+            </div>
+            <div class="center-content">
+              <span class="material-icons likes"> thumb_up </span>
+              <span class="no-likes">20</span>
+            </div>
+            <div class="likes-hr"></div>
+            <div class="post-interactions">
+              <button class="interaction-button">
+                <span class="material-icons mr-10"> thumb_up </span>Like
+              </button>
+              <button class="interaction-button">
+                <span class="material-icons mr-10"> chat </span>Comment
+              </button>
+              <button class="interaction-button">
+                <span class="material-icons mr-10"> share </span>Share
+              </button>
+              <button class="interaction-button">
+                <span class="material-icons mr-10"> send </span>Send
+              </button>
+            </div>
           </div>
         </div>
       </div>
