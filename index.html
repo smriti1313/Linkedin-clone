@@ -156,7 +156,47 @@
       .pink-button {
         color: #f89295;
       }
-    </style>
+
+      .posts-hr{
+        border-top: 1px solid #000000aa;
+        margin-top: 25px;
+        border-color: rgb(167, 167, 167);
+      }
+
+      .post{
+        background-color: white;
+        border: 1px solid #6e6e6e;
+        margin-top: 15px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+
+      }
+
+      .post-info{
+        display: flex;
+        align-items: center;
+      }
+
+      .post-metadata{
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+        line-height: 1.3rem;
+       
+      }
+
+      .post-creator{
+        font-size: 15px;
+        font-weight: 600;
+      }
+
+      .post-followers,.post-duration,.material-icons{
+        color: #00000099;
+        font-size: small;
+      }
+
+     </style>
   </head>
   <body>
     <header class="navbar">
@@ -228,6 +268,23 @@
               <span class="material-icons pink-button mr-10"> article </span>
               Write Article
             </button>
+          </div>
+
+          <div class="posts-hr"></div>
+
+          <div class="post">
+            <div class="post-info">
+              <img class="post-image" src="user.jpeg" alt="my photo" />
+              <div class="post-metadata">
+                <div class="post-creator">Smriti's post</div>
+                <div class="post-followers">4,528 followers</div>
+                <div class="post-duration">
+                  1w ▪ <span class="material-icons">public</span>
+                </div>
+              </div>
+            </div>
+            <div class="post-data"></div>
+            <div class="post-interactions"></div>
           </div>
         </div>
       </div>
