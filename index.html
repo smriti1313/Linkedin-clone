@@ -1,381 +1,591 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>LinkedIn</title>
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <style>
-      body,
-      html {
-        height: 100%;
-        width: 100%;
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-      }
 
-      body {
-        background-color: #f3f2ef;
-      }
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LinkedIn</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <style>
+    body,
+    html {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    }
 
-      .navbar {
-        background-color: white;
-        width: 100vw;
-        height: 60px;
-        border-bottom: 1px solid #00000014;
-        position: fixed;
-        top: 0;
-        left: 0;
-      }
+    body {
+      background-color: #f3f2ef;
+    }
 
-      .nav-content {
-        display: flex;
-        align-items: center;
-        margin: 0 auto;
-        margin-top: 10px;
-      }
+    .navbar {
+      background-color: white;
+      width: 100vw;
+      height: 60px;
+      border-bottom: 1px solid #00000014;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
 
-      .nav-img {
-        margin-left: 18%;
-        color: #0a66c2;
-      }
+    .nav-content {
+      display: flex;
+      align-items: center;
+      margin: 0 auto;
+      margin-top: 10px;
+    }
 
-      .nav-search {
-        height: 35px;
-        width: 270px;
-        margin-left: 7px;
-        border: none;
-        border-radius: 4px;
-        background-color: #eef3f8;
-        text-indent: 12px;
-      }
+    .nav-img {
+      margin-left: 18%;
+      color: #0a66c2;
+    }
 
-      .navigation {
-        margin-left: 12%;
-        display: flex;
-        align-items: center;
-      }
+    .nav-search {
+      height: 35px;
+      width: 270px;
+      margin-left: 7px;
+      border: none;
+      border-radius: 4px;
+      background-color: #eef3f8;
+      text-indent: 12px;
+    }
 
-      .nav-icon {
-        text-decoration: none;
-        color: #666;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-left: 20px;
-        margin-right: 7px;
-        font-size: 12px;
-        font-weight: 300;
-      }
+    .navigation {
+      margin-left: 12%;
+      display: flex;
+      align-items: center;
+    }
 
-      .main {
-        height: 100%;
-        display: flex;
-        margin: 0 auto;
-        margin-top: 70px;
-        max-width: 60%;
-      }
+    .nav-icon {
+      text-decoration: none;
+      color: #666;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 20px;
+      margin-right: 7px;
+      font-size: 12px;
+      font-weight: 300;
+    }
 
-      .left {
-        border: 1px solid black;
-        width: 225px;
-        margin-top: 35px;
-      }
+    .main {
+      height: 100%;
+      display: flex;
+      margin: 0 auto;
+      margin-top: 70px;
+      max-width: 75vw;
+    }
 
-      .center {
-        /* border: 1px solid black; */
-        flex-grow: 1;
-        margin-top: 35px;
-        margin-left: 25px;
-        margin-right: 25px;
-      }
+    .left {
+      /* border: 1px solid black; */
+      
+      width: 45vw;
+      margin-top: 35px;
+      text-align: center;
+    }
 
-      .right {
-        border: 1px solid black;
-        width: 300px;
-        margin-top: 35px;
-      }
+    .center {
+      /* border: 1px solid black; */
+      flex-grow: 1;
+      margin: 35px 25px 35px 25px;
+    }
 
-      .create-posts {
-        background-color: white;
-        height: 120px;
-        width: 540px;
-        border: 1px solid #6e6e6e42;
-        border-radius: 10px;
-      }
+    .right {
+      /* border: 1px solid black; */
+      width: 55vw;
+      margin-top: 35px;
+    }
 
-      .post-image {
-        height: 48px;
-        width: 48px;
-        border-radius: 50%;
-        margin-top: 10px;
-        margin-left: 10px;
-      }
+    .create-posts {
+      background-color: white;
+      height: 120px;
+      width: 540px;
+      border: 1px solid #6e6e6e42;
+      border-radius: 0.8rem;
+    }
 
-      .create-post-top {
-        display: flex;
-      }
+    .post-image {
+      height: 48px;
+      width: 48px;
+      border-radius: 50%;
+      margin-top: 10px;
+      margin-left: 10px;
+    }
 
-      .post-input {
-        height: 40px;
-        flex: 1;
-        border-radius: 25px;
-        border: 1px solid #aaa;
-        margin: 14px;
-        text-indent: 15px;
-      }
-      .create-post-bottom {
-        display: flex;
-        justify-content: space-around;
-      }
-      .post-button {
-        background-color: transparent;
-        border: none;
-        display: flex;
-        align-items: center;
-        padding: 5px;
-        color: #00000099;
-      }
+    .create-post-top {
+      display: flex;
+    }
 
-      .mr-10 {
-        margin-right: 10px;
-      }
+    .post-input {
+      height: 40px;
+      flex: 1;
+      border-radius: 25px;
+      border: 1px solid #aaa;
+      margin: 14px;
+      text-indent: 15px;
+    }
 
-      .blue-button {
-        color: #70b5f9;
-      }
-      .green-button {
-        color: #7fc15e;
-      }
-      .orange-button {
-        color: #e7a33e;
-      }
-      .pink-button {
-        color: #f89295;
-      }
+    .create-post-bottom {
+      display: flex;
+      justify-content: space-around;
+    }
 
-      .posts-hr {
-        border-top: 1px solid #000000aa;
-        margin-top: 30px;
-        border-color: #00000033;
-      }
+    .post-button {
+      background-color: transparent;
+      border: none;
+      display: flex;
+      align-items: center;
+      padding: 5px;
+      color: #00000099;
+    }
 
-      .post {
-        background-color: white;
-        border: 1px solid #6e6e6e;
-        border-color: #6e6e6e42;
-        margin-top: 15px;
-        border-radius: 10px;
-        display: flex;
-        flex-direction: column;
-      }
-      .post-info {
-        display: flex;
-        align-items: center;
-      }
+    .mr-10 {
+      margin-right: 10px;
+    }
 
-      .post-metadata {
-        display: flex;
-        flex-direction: column;
-        margin-left: 10px;
-        margin-top: 7px;
-        line-height: 1.3rem;
-      }
-      .post-creator {
-        font-size: 15px;
-        font-weight: 500;
-      }
+    .blue-button {
+      color: #70b5f9;
+    }
 
-      .faded-text {
-        font-size: small;
-        color: #00000099;
-      }
+    .green-button {
+      color: #7fc15e;
+    }
 
-      .post-data {
-        font-size: 15px;
-        color: rgb(48, 47, 47);
-        margin-left: 15px;
-        margin-top: 10px;
-      }
+    .orange-button {
+      color: #e7a33e;
+    }
 
-      .read-more {
-        margin-left: 447px;
-        margin-top: 12px;
-        color: #00000099;
-      }
+    .pink-button {
+      color: #f89295;
+    }
 
-      .likes {
-        font-size: small;
-        color: #0a66c2;
-        margin-left: 15px;
-      }
+    .posts-hr {
+      border-top: 1px solid #000000aa;
+      margin-top: 30px;
+      border-color: #00000033;
+    }
 
-      .center-content {
-        display: flex;
-        align-items: center;
-      }
+    .post {
+      background-color: white;
+      border: 1px solid #6e6e6e;
+      border-color: #6e6e6e42;
+      margin-top: 15px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+    }
 
-      .no-likes {
-        font-size: small;
-        margin-left: 5px;
-      }
+    .post-info {
+      display: flex;
+      align-items: center;
+    }
 
-      .interaction-button {
-        background-color: transparent;
-        border: none;
-        display: flex;
-        align-items: center;
-        margin-right: 12px;
-        margin-bottom: 10px;
-        color: #00000099;
-        margin-left: 7px;
-      }
+    .post-metadata {
+      display: flex;
+      flex-direction: column;
+      margin-left: 10px;
+      margin-top: 7px;
+      line-height: 1.3rem;
+    }
 
-      .likes-hr {
-        border-top: 1px solid #000000aa;
-        margin-top: 12px;
-        margin-bottom: 10px;
-        border-color: #00000033;
-      }
+    .post-creator {
+      font-size: 15px;
+      font-weight: 580;
+    }
 
-      .post-interactions {
-        display: flex;
-      }
+    .faded-text {
+      font-size: small;
+      color: #00000099;
+    }
 
-      .post-content-image {
-        margin-top: 10px;
-        width: 100%;
-      }
-    </style>
-  </head>
-  <body>
-    <header class="navbar">
-      <div class="nav-content">
-        <div class="nav-img">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="34"
-            height="34"
-            viewBox="0 0 34 34"
-            class="nav-logo"
-          >
-            <g>
-              <path
-                d="M34,2.5v29A2.5,2.5,0,0,1,31.5,34H2.5A2.5,2.5,0,0,1,0,31.5V2.5A2.5,2.5,0,0,1,2.5,0h29A2.5,2.5,0,0,1,34,2.5ZM10,13H5V29h5Zm.45-5.5A2.88,2.88,0,0,0,7.59,4.6H7.5a2.9,2.9,0,0,0,0,5.8h0a2.88,2.88,0,0,0,2.95-2.81ZM29,19.28c0-4.81-3.06-6.68-6.1-6.68a5.7,5.7,0,0,0-5.06,2.58H17.7V13H13V29h5V20.49a3.32,3.32,0,0,1,3-3.58h.19c1.59,0,2.77,1,2.77,3.52V29h5Z"
-                fill="currentColor"
-              ></path>
-            </g>
-          </svg>
-        </div>
-        <input class="nav-search" type="text" placeholder="Search" />
-        <nav class="navigation">
-          <a class="nav-icon">
-            <span class="material-icons"> home </span> Home
-          </a>
-          <a class="nav-icon">
-            <span class="material-icons"> people </span> My Network
-          </a>
-          <a class="nav-icon">
-            <span class="material-icons"> work </span> Jobs
-          </a>
-          <a class="nav-icon">
-            <span class="material-icons"> chat_bubble </span> Messaging
-          </a>
-          <a class="nav-icon">
-            <span class="material-icons"> notifications </span> Notifications
-          </a>
-          <a class="nav-icon">
-            <span class="material-icons"> person </span> Me
-          </a>
-        </nav>
+    .post-data {
+      font-size: 15px;
+      color: black;
+      margin-left: 15px;
+      margin-top: 5px;
+    }
+
+    .read-more {
+      margin-left: 447px;
+      color: #00000099;
+    }
+
+    .likes {
+      font-size: small;
+      color: #0a66c2;
+      margin-left: 15px;
+    }
+
+    .center-content {
+      display: flex;
+      align-items: center;
+    }
+
+    .no-likes {
+      font-size: small;
+      margin-left: 5px;
+    }
+
+    .interaction-button {
+      background-color: transparent;
+      border: none;
+      display: flex;
+      align-items: center;
+      margin-right: 12px;
+      margin-bottom: 10px;
+      color: #00000099;
+      margin-left: 7px;
+    }
+
+    .likes-hr {
+      border-top: 1px solid #000000aa;
+      margin-top: 12px;
+      margin-bottom: 10px;
+      border-color: #00000033;
+    }
+
+    .post-interactions {
+      display: flex;
+    }
+
+    .post-content-image {
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    /* For left side profile details card */
+    .profile-cover {
+      background-position: center;
+      background-size: cover;
+      display: block;
+      height: 75px;
+      margin: -13px;
+      border-radius: 12px 12px 0px 0px;
+    }
+
+    .profile-image {
+      border: 1px solid rgba(0, 0, 0, 0.562);
+      height: 65px;
+      width: 65px;
+      border-radius: 50%;
+    }
+
+    .feed-details {
+      /* border-left: 1px solid #6e6e6e42; */
+      /* border-right: 1px solid #6e6e6e42; */
+      background-color: white;
+      /* border-radius: 0.8rem; */
+      padding: 12px 12px 16px;
+    }
+
+    .profile-divder {
+      font-weight:normal; 
+      margin:8px 0;
+    }
+
+    /* For right side linkedin news card */
+    .rightside-card {
+      background-color: white;
+      border: 1px solid #6e6e6e42;
+      border-radius: 0.8rem;
+      margin-bottom: 8px;
+      padding: 12px 0px 12px 0px;
+    }
+
+    .news-title {
+      display: flex !important;
+      padding: 0px 12px 0px 12px;
+    }
+
+    .news-title-font {
+      flex: 1;
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.5;
+      font-weight: 500;
+    }
+
+    .news-icon {
+      margin-top: 0.25rem;
+      font-size: 1rem;
+      position: relative;
+    }
+
+    .list-bullet-size {
+      font-size: xx-small;
+      margin-left: 2px;
+    }
+    .list-font {
+      font-size: 14px;
+      font-weight: normal;
+    }
+    .news-info {
+      color: rgba(0, 0, 0, 0.664);
+      padding-left: 15px;
+      font-size: smaller;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="nav-content">
+      <div class="nav-img">
+        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" class="nav-logo">
+          <g>
+            <path
+              d="M34,2.5v29A2.5,2.5,0,0,1,31.5,34H2.5A2.5,2.5,0,0,1,0,31.5V2.5A2.5,2.5,0,0,1,2.5,0h29A2.5,2.5,0,0,1,34,2.5ZM10,13H5V29h5Zm.45-5.5A2.88,2.88,0,0,0,7.59,4.6H7.5a2.9,2.9,0,0,0,0,5.8h0a2.88,2.88,0,0,0,2.95-2.81ZM29,19.28c0-4.81-3.06-6.68-6.1-6.68a5.7,5.7,0,0,0-5.06,2.58H17.7V13H13V29h5V20.49a3.32,3.32,0,0,1,3-3.58h.19c1.59,0,2.77,1,2.77,3.52V29h5Z"
+              fill="currentColor"></path>
+          </g>
+        </svg>
       </div>
-    </header>
+      <input class="nav-search" type="text" placeholder="Search" />
+      <nav class="navigation">
+        <a class="nav-icon">
+          <span class="material-icons"> home </span> Home
+        </a>
+        <a class="nav-icon">
+          <span class="material-icons"> people </span> My Network
+        </a>
+        <a class="nav-icon">
+          <span class="material-icons"> work </span> Jobs
+        </a>
+        <a class="nav-icon">
+          <span class="material-icons"> chat_bubble </span> Messaging
+        </a>
+        <a class="nav-icon">
+          <span class="material-icons"> notifications </span> Notifications
+        </a>
+        <a class="nav-icon">
+          <span class="material-icons"> person </span> Me
+        </a>
+      </nav>
+    </div>
+  </header>
 
-    <div class="main">
-      <div class="left">left</div>
-      <div class="center">
-        <div class="create-posts">
-          <div class="create-post-top">
+  <div class="main">
+    <div class="left">
+      <div class="rightside-card" style="padding: 0px;" >
+        <div class="feed-details" style="border-bottom: 1px solid rgba(0,0,0,.15);">
+          <div class="profile-cover"
+          style="background-image:url(https://media-exp1.licdn.com/dms/image/C4E16AQGwQrPsE6hKeQ/profile-displaybackgroundimage-shrink_200_800/0/1619033620080?e=1630540800&amp;v=beta&amp;t=heErPIGrsdrdUPBPxvyVGxctN64FcTouEWcY_pBQvEE)">
+          </div>
+          <div>
+            <img class="profile-image" src="./user.jpeg">
+          </div>
+          <div style="font-weight:bold; margin-top:12px;">Smriti Singh</div>
+          <h5 style="font-weight:normal; margin:8px 0;">Web developer @ xyz</h5>
+        </div>
+        <div style="border-bottom: 1px solid rgba(0,0,0,.15);">
+          <div class="news-title" style="text-align: justify; padding: 12px 12px 0px 12px;">
+            <p class="news-title-font">Who viewed your profile</p>
+            <span style="color: blue;">11*</span>
+          </div>
+          <div class="news-title" style="text-align: justify; padding: 5px 12px 12px 12px;">
+            <p class="news-title-font">Views of your post</p>
+            <span style="color: blue;">498</span>
+          </div>
+        </div>
+        <div style="border-bottom: 1px solid rgba(0,0,0,.15);">
+          <div class="news-title" style="text-align: justify; padding: 12px 12px 0px 12px;">
+            <p class="news-title-font" style="font-size:smaller; font-weight: normal;">Access exclusive tools & insights</p>
+          </div>
+          <div class="news-title" style="text-align: justify; padding: 5px 12px 12px 12px;">
+            <span class="news-icon material-icons mr-10"> crop_square </span>
+            <p class="news-title-font" style="font-size: 14px;">Try Premium Free for 1 Month</p>
+          </div>
+        </div>
+        <div style="border-bottom: 1px solid rgba(0,0,0,.15);">
+          <div class="news-title" style="text-align: justify; padding: 12px 12px 0px 12px;">
+            <span class="news-icon material-icons mr-10"> card_membership </span>
+            <p class="news-title-font" style="margin-bottom: 10px;">My items</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="center">
+      <div class="create-posts">
+        <div class="create-post-top">
+          <img class="post-image" src="./user.jpeg" />
+          <input placeholder="Start a Post" class="post-input" type="text" />
+        </div>
+        <div class="create-post-bottom">
+          <button class="post-button">
+            <span class="material-icons blue-button mr-10"> image </span>
+            Photo
+          </button>
+          <button class="post-button">
+            <span class="material-icons green-button mr-10">
+              play_circle_filled
+            </span>
+            Video
+          </button>
+          <button class="post-button">
+            <span class="material-icons orange-button mr-10"> event </span>
+            Event
+          </button>
+          <button class="post-button">
+            <span class="material-icons pink-button mr-10"> article </span>
+            Write Article
+          </button>
+        </div>
+
+        <div class="posts-hr"></div>
+
+        <div class="post">
+          <div class="post-info">
             <img class="post-image" src="./user.jpeg" />
-            <input placeholder="Start a Post" class="post-input" type="text" />
-          </div>
-          <div class="create-post-bottom">
-            <button class="post-button">
-              <span class="material-icons blue-button mr-10"> image </span>
-              Photo
-            </button>
-            <button class="post-button">
-              <span class="material-icons green-button mr-10">
-                play_circle_filled
-              </span>
-              Video
-            </button>
-            <button class="post-button">
-              <span class="material-icons orange-button mr-10"> event </span>
-              Event
-            </button>
-            <button class="post-button">
-              <span class="material-icons pink-button mr-10"> article </span>
-              Write Article
-            </button>
-          </div>
 
-          <div class="posts-hr"></div>
-
-          <div class="post">
-            <div class="post-info">
-              <img class="post-image" src="user.jpeg" />
-
-              <div class="post-metadata">
-                <div class="post-creator">Smriti Singh</div>
-                <div class="faded-text">1,543 followers</div>
-                <div class="faded-text">
-                  1w • <span class="material-icons faded-text"> public </span>
-                </div>
+            <div class="post-metadata">
+              <div class="post-creator">Smriti Singh</div>
+              <div class="faded-text">7,123 followers</div>
+              <div class="faded-text">
+                1w • <span class="material-icons faded-text"> public </span>
               </div>
             </div>
-            <div class="post-data">
-              A key to achieving success is to assemble a solid and stable management team.Presenting you our Management Team of The Uplift Project.
-              <!-- #uplift #upliftproject #girlscript #educationfirst #100DaysOfUplift  -->
-            
-            </div>
+          </div>
+          <div class="post-data">
+            A key to achieving success is to assemble a solid and stable management team. 
+          </div>
 
-            <div class="read-more">...see more</div>
-            <div>
-              <img
-                class="post-content-image"
-                src="https://media-exp3.licdn.com/dms/image/C4D22AQFJFmCBSAKkSg/feedshare-shrink_800/0/1621953872494?e=1628121600&v=beta&t=r2q3H8HkWh-AfY-n70ST8t2pMDmywAIONiuBY4oqfpE"
-                alt=""
-              />
-            </div>
-            <div class="center-content">
-              <span class="material-icons likes"> thumb_up </span>
-              <span class="no-likes">20 • 2 comments</span>
-            </div>
-            <div class="likes-hr"></div>
-            <div class="post-interactions">
-              <button class="interaction-button">
-                <span class="material-icons mr-10"> thumb_up </span>Like
-              </button>
-              <button class="interaction-button">
-                <span class="material-icons mr-10"> chat </span>Comment
-              </button>
-              <button class="interaction-button">
-                <span class="material-icons mr-10"> share </span>Share
-              </button>
-              <button class="interaction-button">
-                <span class="material-icons mr-10"> send </span>Send
-              </button>
-            </div>
+          <div class="read-more">...see more</div>
+          <div>
+            <img class="post-content-image"
+              src="https://media-exp3.licdn.com/dms/image/C4D22AQFJFmCBSAKkSg/feedshare-shrink_1280/0/1621953872494?e=1628726400&v=beta&t=4d-q-6qHWrl9M7YtiYPPoHYpIjmemkQww4t_Q2Us_gc"
+              alt="" />
+          </div>
+          <div class="center-content">
+            <span class="material-icons likes"> thumb_up </span>
+            <span class="no-likes">78 • 3 comments</span>
+          </div>
+          <div class="likes-hr"></div>
+          <div class="post-interactions">
+            <button class="interaction-button">
+              <span class="material-icons mr-10"> thumb_up </span>Like
+            </button>
+            <button class="interaction-button">
+              <span class="material-icons mr-10"> chat </span>Comment
+            </button>
+            <button class="interaction-button">
+              <span class="material-icons mr-10"> share </span>Share
+            </button>
+            <button class="interaction-button">
+              <span class="material-icons mr-10"> send </span>Send
+            </button>
           </div>
         </div>
+
+        <div class="posts-hr"></div>
+
+        <div class="post">
+          <div class="post-info">
+            <img class="post-image" src="./faisal-logo.jpg" />
+
+            <div class="post-metadata">
+              <div class="post-creator">Faizal Deraiya • 2nd</div>
+              <div class="faded-text">Internship Project at standard agro engineering</div>
+              <div class="faded-text">
+                1d • Edited • <span class="material-icons faded-text">public </span>
+              </div>
+            </div>
+          </div>
+          <div class="post-data">
+            Success always wants hard work... I'm glad that finally after too much hard-work, 
+            me and my teammate Abdul Qaher become the winner of the #ideation event, 
+            in major of manufacturing new products, RKU, Gujrat This honor is the
+          </div>
+          <div class="read-more">...see more</div>
+          <div>
+            <img class="post-content-image"
+              src="./faisal-achivement.jpg"
+              alt="" />
+          </div>
+          <div class="center-content">
+            <span class="material-icons likes"> thumb_up </span>
+            <span class="no-likes">16 • 2 comments</span>
+          </div>
+          <div class="likes-hr"></div>
+          <div class="post-interactions">
+            <button class="interaction-button">
+              <span class="material-icons mr-10"> thumb_up </span>Like
+            </button>
+            <button class="interaction-button">
+              <span class="material-icons mr-10"> chat </span>Comment
+            </button>
+            <button class="interaction-button">
+              <span class="material-icons mr-10"> share </span>Share
+            </button>
+            <button class="interaction-button">
+              <span class="material-icons mr-10"> send </span>Send
+            </button>
+          </div>
+        </div>
+        <div class="posts-hr"></div>
+
       </div>
-      <div class="right">right</div>
     </div>
-  </body>
+    <div class="right">
+      <div class="rightside-card">
+        <div class="news-title">
+          <p class="news-title-font">LinkedIn News</p>
+          <span class="news-icon material-icons">info </span>
+        </div>
+        <div style="padding: 5px 12px;">
+          <p class="news-title-font list-font">
+            <span class="news-icon list-bullet-size material-icons">circle </span>
+            Keep calm and job hunt<br>
+            <small class="news-info">3d ago • 826 readers</small>
+          </p>
+          <p class="news-title-font list-font">
+            <span class="news-icon list-bullet-size material-icons">circle </span>
+            Apple pushes back on remote work<br>
+            <small class="news-info">1d ago • 204,731 readers</small>
+          </p>
+          <p class="news-title-font list-font">
+            <span class="news-icon list-bullet-size material-icons">circle </span>
+            When job interviews are endless<br>
+            <small class="news-info">1d ago • 87,980 readers</small>
+          </p>
+          <p class="news-title-font list-font">
+            <span class="news-icon list-bullet-size material-icons">circle </span>
+            Latest recruiting perk: WFH forever<br>
+            <small class="news-info">3d ago • 105,480 readers</small>
+          </p>
+          <p class="news-title-font list-font">
+            <span class="news-icon list-bullet-size material-icons">circle </span>
+            Moderna vaccination gets approval<br>
+            <small class="news-info">3d ago • 141,649 readers</small>
+          </p>
+        </div>
+
+      </div>
+
+      <div class="rightside-card">
+        <div class="news-title">
+          <p class="news-title-font">Today's top courses</p>
+          <span class="news-icon material-icons"> info </span>
+        </div>
+        <div style="padding: 5px 12px;">
+          <p class="news-title-font list-font">
+            1. Speaking Confidently and Effectively<br>
+            <small class="news-info">Pete Mockaitis | How to Be Awesome at Your Job</small>
+          </p>
+          <p class="news-title-font list-font">
+            2. DevOps Foundations<br>
+            <small class="news-info">James Wickett and Ernest Mueller</small>
+          </p>
+          <p class="news-title-font list-font">
+            3. Unconscious Bias<br>
+            <small class="news-info">Stacey Gordon</small>
+          </p>
+        </div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+</body>
+
 </html>
